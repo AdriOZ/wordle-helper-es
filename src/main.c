@@ -179,21 +179,15 @@ int main()
         .exc = "",
     };
 
-    AddToPattern(&p, "turia", "gvavg");
+    AddToPattern(&p, "turia", "gggvg");
     AddToPattern(&p, "moles", "ggagg");
 
-    size_t max = 20;
-    for (size_t i = 0; i < NUMBER_WORDS; i++)
+    for (size_t i = 0, max = 20; i < NUMBER_WORDS && max > 0; i++)
     {
         if (Match(&p, WORDS[i]))
         {
             printf("%s\n", WORDS[i]);
-
             max--;
-            if (!max)
-            {
-                break;
-            }
         }
     }
     int wait;
